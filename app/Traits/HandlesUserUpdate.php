@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Enums\UserType;
+use App\Enums\UserStatus;
 
 trait HandlesUserUpdate
 {
@@ -33,7 +34,7 @@ trait HandlesUserUpdate
         $user->phone = $request->phone;
 
         if ($request->has('status')) {
-            $user->status = $request->status;
+            $user->status = UserStatus::from($request->status);
         }
 
         $user->save();

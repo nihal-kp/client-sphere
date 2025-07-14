@@ -80,7 +80,7 @@ class ClientController extends Controller
             'password' => Hash::make($request->password),
             'image' => $fileName,
             'type' => UserType::CLIENT->value,
-            'status' => $request->status,
+            'status' => UserStatus::from($request->status),
         ]);
 
         return redirect()->route('admin.clients.index')->with('success', 'Data added successfully');
