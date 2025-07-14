@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
         [
             'name' => 'Admin',
             'phone' => '1234567890',
-            'type' => UserType::ADMIN,
-            'status' => UserStatus::ACTIVE,
+            'type' => UserType::ADMIN->value,
+            'status' => UserStatus::ACTIVE->value,
             'password' => Hash::make('Admin@123'),
         ]);
 

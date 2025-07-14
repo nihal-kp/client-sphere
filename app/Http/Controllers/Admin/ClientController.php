@@ -79,7 +79,7 @@ class ClientController extends Controller
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
             'image' => $fileName,
-            'type' => UserType::CLIENT,
+            'type' => UserType::CLIENT->value,
             'status' => $request->status,
         ]);
 
